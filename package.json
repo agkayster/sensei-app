@@ -6,26 +6,45 @@
   "author": "agkayster <ejike.chiboka@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "serve": "webpack-dev-server --mode=development"
+    "seed": "node db/seeds.js",
+    "serve:backend": "nodemon",
+    "serve:frontend": "webpack-dev-server --node development",
+    "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
+    "build": "webpack -p",
+    "start": "node index"
   },
   "dependencies": {
     "3": "^2.1.0",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
+    "axios": "^0.19.2",
     "babel-loader": "^8.1.0",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "bulma": "^0.8.2",
     "chokidar": "^3.3.1",
     "css-loader": "^3.5.2",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^1.8.0",
+    "eslint-utils": "^2.0.0",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^4.2.0",
+    "mongoose": "^5.9.16",
     "node-sass": "^4.14.0",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.4",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.1.0",
+    "eslint-plugin-react": "^7.20.0"
   }
 }

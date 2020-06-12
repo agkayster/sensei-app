@@ -8,6 +8,7 @@ class ProductTable extends Component {
     this.state = {
       products: [],
       supplierID: 'New Co. Ltd'
+      // nameID: 'mini wongle'
     }
 
     this.handleProducts = this.handleProducts.bind(this)
@@ -26,7 +27,8 @@ class ProductTable extends Component {
 
   handleProducts(e) {
     this.setState({
-      supplierID: e.target.value
+      supplierID: e.target.value,
+      nameID: e.target.value
     })
   }
 
@@ -41,6 +43,10 @@ class ProductTable extends Component {
     const selectedSuppliersProducts = this.state.products.filter(
       (product) => product.supplier === this.state.supplierID
     )
+
+    // const selectedSuppliersProductsNames = this.state.products.filter(
+    //   (product) => product.name === this.state.nameID
+    // )
 
     return (
       <div className="container-fluid">

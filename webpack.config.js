@@ -36,6 +36,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    // '@babel/proposal-class-properties',
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',

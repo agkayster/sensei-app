@@ -4,14 +4,11 @@ import { HashRouter, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 import ProductTable from './Component/ProductTable'
 
-
-
 class Client extends Component {
-  render(){
+  render() {
     return (
       <div>
         <HashRouter>
-
           <Route path="/" component={ProductTable} />
         </HashRouter>
       </div>
@@ -19,10 +16,8 @@ class Client extends Component {
   }
 }
 
-
-
 const container = document.getElementById('container')
-ReactDOM.render(<Client/>, container)
+ReactDOM.render(<Client />, container)
 // const PRODUCTS = [
 //   { supplier: 'New Co. Ltd', name: 'small wongle', stock: true, price: '5' },
 //   { supplier: 'New Co. Ltd', name: 'large wongle', stock: false, price: '8' },

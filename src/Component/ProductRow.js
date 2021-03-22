@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 class ProductRow extends Component {
   //this.props.product only works because of Product Table class component
   render() {

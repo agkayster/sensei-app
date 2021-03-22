@@ -2,20 +2,18 @@ import React, { useState, useEffect } from 'react'
 import ProductRow from './ProductRow'
 import Axios from 'axios'
 
-function ProductTable () {
+function ProductTable() {
+  const [products, setProducts] = useState([])
 
-  const[products, setProducts] = useState([])
-
-  const[supplierID, setSupplierID] = useState('New Co. Ltd')
+  const [supplierID, setSupplierID] = useState('New Co. Ltd')
 
   useEffect(() => {
+    const productUpdate = async () => {
+      const data = await Axios.get('/api/products')
+      setProducts(data)
+    }
     productUpdate()
-  })
-
-  const productUpdate = async () => {
-    const data = await Axios.get('/api/products')
-    setProducts(data) 
-  }
+  }, [])
 
   // console.log(products)
 
@@ -25,7 +23,7 @@ function ProductTable () {
 
   if (products.length === 0) {
     return <h1>Please wait while loading...</h1>
-  } 
+  }
 
   const suppliers = Array.from(
     new Set(products.data.map((product) => product.supplier))
@@ -88,20 +86,6 @@ function ProductTable () {
 }
 
 export default ProductTable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // class ProductTable extends Component {
 //   constructor(props) {
@@ -203,5 +187,3 @@ export default ProductTable
 // }
 
 // export default ProductTable;
-
-

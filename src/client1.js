@@ -6,9 +6,7 @@ class ProductCompanyRow extends React.Component {
     const company = this.props.company
     return (
       <form className='form'>
-        <label>
-                Company:
-        </label>
+        <label>Company:</label>
         <div className='select'>
           <select>
             <option>{company}</option>
@@ -31,24 +29,24 @@ class ProductRow extends React.Component {
       <span style={{ color: 'brown' }}>{product.name}</span>
     )
     return (
-      <form className="form">
+      <form className='form'>
         <label>Product:</label>
-        <div className="select">
+        <div className='select'>
           <select>
             <option>{name}</option>
           </select>
         </div>
         <label>Price:</label>
-        <div className="select">
+        <div className='select'>
           <select>
             <option>{product.price}</option>
           </select>
         </div>
       </form>
-      //   <tr>
-      //     <td>{name}</td>
-      //     <td>{product.price}</td>
-      //   </tr>
+    //   <tr>
+    //     <td>{name}</td>
+    //     <td>{product.price}</td>
+    //   </tr>
     )
   }
 }
@@ -70,7 +68,10 @@ class ProductTable extends React.Component {
       }
       if (product.company !== lastCompany) {
         rows.push(
-          <ProductCompanyRow company={product.company} key={product.company} />
+          <ProductCompanyRow
+            company={product.company}
+            key={product.company}
+          />
         )
       }
       rows.push(<ProductRow product={product} key={product.id} />)
@@ -97,9 +98,8 @@ class SearchBar extends React.Component {
     super(props)
 
     this.handleInStockChange = this.handleInStockChange.bind(this)
-    this.handleFilterSearchTextChange = this.handleFilterSearchTextChange.bind(
-      this
-    )
+    this.handleFilterSearchTextChange =
+			this.handleFilterSearchTextChange.bind(this)
   }
 
   handleFilterSearchTextChange(e) {
@@ -114,19 +114,19 @@ class SearchBar extends React.Component {
     return (
       <form>
         <input
-          type="text"
-          placeholder="Mini Wongle..."
+          type='text'
+          placeholder='Mini Wongle...'
           value={this.props.filterSearchText}
           onChange={this.handleFilterSearchTextChange}
         />
         <p>
           <input
-            type="checkbox"
+            type='checkbox'
             checked={this.props.inStock}
             onChange={this.handleInStockChange}
           />
           {''}
-          show only items in stock:
+					show only items in stock:
         </p>
       </form>
     )
@@ -140,9 +140,8 @@ class FilterableProductTable extends React.Component {
     this.state = { filterSearchText: '', inStock: false }
 
     this.handleInStockChange = this.handleInStockChange.bind(this)
-    this.handleFilterSearchTextChange = this.handleFilterSearchTextChange.bind(
-      this
-    )
+    this.handleFilterSearchTextChange =
+			this.handleFilterSearchTextChange.bind(this)
   }
 
   handleFilterSearchTextChange(filterSearchText) {

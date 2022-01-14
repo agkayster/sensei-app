@@ -45,7 +45,7 @@
     "mongoose": "^5.9.16",
     "mpath": "^0.8.4",
     "mquery": "^4.0.0",
-    "node-forge": "^0.10.0",
+    "node-forge": "^1.0.0",
     "node-sass": "^4.14.0",
     "nodemon": "^2.0.4",
     "normalize-url": "^7.0.2",

@@ -36,9 +36,7 @@ function ProductTable() {
     if (e.target.value === 'All') {
       newProducts = products.map((item) => item.name)
       newProducts.unshift('All')
-      setProductsAll(
-        Array.from(new Set(newProducts))
-      )
+      setProductsAll(Array.from(new Set(newProducts)))
       setProductDetails(products.map((product) => product))
     }
     if (e.target.value === 'New Co. Ltd') {
@@ -46,10 +44,8 @@ function ProductTable() {
         .filter((item) => item.supplier === e.target.value)
         .map((item) => item.name)
       newProducts.unshift('All')
-      
-      setProductsAll(
-        newProducts
-      )
+
+      setProductsAll(newProducts)
       setProductDetails(
         products.filter(
           (product) => product.supplier === e.target.value
@@ -61,10 +57,8 @@ function ProductTable() {
         .filter((item) => item.supplier === e.target.value)
         .map((item) => item.name)
       newProducts.unshift('All')
-      
-      setProductsAll(
-        newProducts
-      )
+
+      setProductsAll(newProducts)
       setProductDetails(
         products.filter(
           (product) => product.supplier === e.target.value
@@ -101,6 +95,7 @@ function ProductTable() {
     }
   }
 
+  // useeffect to watch out for changes whn i want to filter using both supplier and product
   useEffect(() => {
     switch (selectedSupplier) {
       case 'All':
@@ -171,7 +166,11 @@ function ProductTable() {
   }, [selectedSupplier, selectedProducts])
 
   if (products.length === 0) {
-    return <h1>Please wait while loading...</h1>
+    return (
+      <div className='spinner-border' role='status'>
+        <span className='visually-hidden'></span>
+      </div>
+    )
   }
 
   return (

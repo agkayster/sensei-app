@@ -9,7 +9,7 @@ class Client extends Component {
     return (
       <div>
         <HashRouter>
-          <Route path="/" component={ProductTable} />
+          <Route path='/' component={ProductTable} />
         </HashRouter>
       </div>
     )

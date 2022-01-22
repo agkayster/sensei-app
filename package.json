@@ -42,6 +42,7 @@
     "http-proxy": "^1.18.1",
     "ini": "^2.0.0",
     "jquery": "^3.5.1",
+    "json-schema": "^0.4.0",
     "lodash": "^4.17.21",
     "mongoose": "^5.9.16",
     "mpath": "^0.8.4",
